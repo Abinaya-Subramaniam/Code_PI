@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Geometry Playground</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Interactive Geometry Playground</h1>
+        </header>
+        <main>
+            <div class="controls">
+                <div class="button-group">
+                    <div class="shape-btn-container">
+                        <button id="drawTriangleBtn" class="shape-btn">▲</button>
+                        <p class="shape-label">Triangle</p>
+                    </div>
+                    <div class="shape-btn-container">
+                        <button id="drawCircleBtn" class="shape-btn">●</button>
+                        <p class="shape-label">Circle</p>
+                    </div>
+                    <div class="shape-btn-container">
+                        <button id="drawRectangleBtn" class="shape-btn">■</button>
+                        <p class="shape-label">Rectangle</p><br>
+                    </div><br><br>
+                </div>
+                <div class="adjustments-and-calculations">
+                    <div id="adjustments" class="slider-container">
+                        <div class="slider">
+                            <label for="radiusSlider">Circle Radius (cm): </label>
+                            <input type="range" id="radiusSlider" min="50" max="300" value="150">
+                            <span id="radiusValue">150</span> cm
+                        </div>
+                        <div class="slider">
+                            <label for="heightSlider">Triangle Height (cm): </label>
+                            <input type="range" id="heightSlider" min="50" max="500" value="200">
+                            <span id="heightValue">200</span> cm
+                        </div>
+                        <div class="slider">
+                            <label for="lengthSlider">Rectangle Length (cm): </label>
+                            <input type="range" id="lengthSlider" min="50" max="500" value="200">
+                            <span id="lengthValue">200</span> cm
+                        </div>
+                        <div class="slider">
+                            <label for="breadthSlider">Rectangle Breadth (cm): </label>
+                            <input type="range" id="breadthSlider" min="50" max="500" value="150">
+                            <span id="breadthValue">150</span> cm
+                        </div>
+                    </div>
+                    <div class="calculations">
+                        <div class="card">
+                            <h3>Area</h3>
+                            <p id="area">Area: 0 cm²</p>
+                        </div>
+                        <div class="card">
+                            <h3>Perimeter</h3>
+                            <p id="perimeter">Perimeter: 0 cm</p>
+                        </div>
+                        <div class="card">
+                            <h3>Angles</h3>
+                            <p id="angles">Angles: 0°</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="canvas-container">
+                <canvas id="geometryCanvas" width="800" height="600"></canvas>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

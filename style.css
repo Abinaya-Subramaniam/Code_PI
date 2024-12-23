@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e0f7fa;
+    color: #333;
+    overflow-x: hidden;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #00695c;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-bottom: 30px;
+    flex-wrap: wrap; 
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+.shape-btn-container {
+    text-align: center;
+}
+
+.shape-btn {
+    width: 80px;
+    height: 80px;
+    font-size: 1.8em;
+    background-color: #4CAF50;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.shape-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.1);
+}
+
+.shape-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.shape-label {
+    margin-top: 8px;
+    font-size: 1.1em;
+    color: #00695c;
+    font-weight: 600;
+}
+
+.adjustments-and-calculations {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1100px;
+    flex-wrap: wrap; 
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 60%;
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.slider input {
+    width: 70%;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    height: 6px;
+    -webkit-appearance: none;
+    outline: none;
+}
+
+.slider input:hover {
+    background-color: #e0e0e0;
+}
+
+.slider span {
+    font-weight: bold;
+    width: 50px;
+    text-align: center;
+    color: #4CAF50;
+}
+
+.canvas-container {
+    margin: 20px 0;
+}
+
+#geometryCanvas {
+    display: block;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.calculations {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 35%;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    margin-bottom: 20px;
+    color: #00695c;
+}
+
+.card p {
+    font-size: 1.1em;
+    margin: 5px 0;
+    color: #555;
+}
+
+.card p strong {
+    color: #00796b;
+}
+
+@keyframes drawAnimation {
+    0% {
+        stroke-dashoffset: 1000;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.shape-btn {
+    transition: transform 0.3s ease;
+}
+
+.shape-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .slider-container {
+        width: 100%;
+    }
+
+    .calculations {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .button-group {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .shape-btn {
+        width: 70px;
+        height: 70px;
+        font-size: 1.5em;
+    }
+
+    .shape-label {
+        font-size: 0.9em;
+        margin-top: 5px;
+    }
+
+    #geometryCanvas {
+        width: 100%;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 480px) {
+    .shape-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 1.3em;
+    }
+
+    .shape-label {
+        font-size: 0.8em;
+    }
+}
